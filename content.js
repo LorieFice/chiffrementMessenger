@@ -9,7 +9,7 @@ function changeText() {
   chrome.runtime.onMessage.addListener(gotMessage);
 
   function gotMessage(message, sender, sendResponse) {
-    clé = message.txt
+    clé = message.key;
     mémoireClé = clé;
     phrase = document.getElementsByClassName('_3oh- _58nk');
     for (var z = compteur; z < phrase.length; z++) {

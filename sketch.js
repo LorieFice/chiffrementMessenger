@@ -6,21 +6,9 @@ var textToReturn = [];
 
 clé.addEventListener('keyup', function() {
   if (clé.value != "") {
-    var params = {
-      active: true,
-      currentWindow: true
-    }
-    chrome.tabs.query(params, gotTabs);
-
-    function gotTabs(tabs) {
-      var message = clé.value;
-      var msg = {
-        txt: clé.value
-      }
-      chrome.tabs.sendMessage(tabs[0].id, msg);
-    }
+    chrome.runtime.sendMessage(clé.value);
   }
-})
+});
 
 texte.addEventListener('keyup', function() {
   if (texte.value != "" && clé.value != "") {
