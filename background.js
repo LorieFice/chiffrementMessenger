@@ -1,4 +1,4 @@
-var clé;
+var clé = "A";
 chrome.runtime.onMessage.addListener(receiver);
 
 function receiver(message, sender, sendResponse) {

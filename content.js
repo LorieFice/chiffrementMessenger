@@ -4,8 +4,15 @@ var mémoire = [];
 var mémoireClé;
 var compteur = 0;
 var boiteMessage;
+var ongletsGauche;
 
 function changeText() {
+  conversations = document.getElementsByClassName('uiScrollableAreaContent')[0].getElementsByTagName('div')[1];
+  conversations.addEventListener('click', function() {
+    mémoire = [];
+    compteur = 0;
+  })
+
   chrome.runtime.onMessage.addListener(gotMessage);
 
   function gotMessage(message, sender, sendResponse) {
