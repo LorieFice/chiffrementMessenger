@@ -3,6 +3,12 @@ var texte = document.getElementById('texte');
 var result = document.getElementById('result');
 var textePlaceholder = [];
 var textToReturn = [];
+var bouton = document.getElementById('bouton');
+
+bouton.addEventListener('click', function() {
+  clé.value = "";
+  chrome.runtime.sendMessage("A");
+})
 
 clé.addEventListener('keyup', function() {
   if (clé.value != "") {
