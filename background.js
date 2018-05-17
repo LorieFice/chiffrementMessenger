@@ -3,11 +3,11 @@ chrome.runtime.onMessage.addListener(receiver);
 
 function receiver(message, sender, sendResponse) {
   clé = message;
-  console.log(clé);
   envoi();
 }
 
 function envoi() {
+  chrome.runtime.sendMessage(clé);
   var params = {
     active: true,
     currentWindow: true

@@ -4,6 +4,7 @@ var result = document.getElementById('result');
 var textePlaceholder = [];
 var textToReturn = [];
 var bouton = document.getElementById('bouton');
+var cléMémoire;
 
 bouton.addEventListener('click', function() {
   clé.value = "";
@@ -19,9 +20,17 @@ clé.addEventListener('keyup', function() {
 texte.addEventListener('keyup', function() {
   if (texte.value != "" && clé.value != "") {
     codage(texte.value, clé.value);
-    result.innerText = motFinal.join('');
+  } else if (texte.value != "" && clé.value == "") {
+    codage(texte.value, cléMémoire);
   }
+  result.innerText = motFinal.join('');
 })
+
+chrome.runtime.onMessage.addListener(receiver);
+
+function receiver(message, sender, sendResponse) {
+  cléMémoire = message;
+}
 
 var motDécomposé;
 var cléDécomposée;
