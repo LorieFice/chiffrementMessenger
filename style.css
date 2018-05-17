@@ -1,0 +1,31 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+  outline: none;
+  background: #3D94F6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.70em;
+  text-align: center;
+  position: relative;
+}
+
+button:hover {
+  background: #1E62D0;
+}
+
+button:active {
+  background: #053c96;
+}
+
+textarea {
+  resize: vertical;
+  position: relative;
+}
+
+input {
+  text-align: center;
+}
