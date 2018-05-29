@@ -7,17 +7,20 @@ var bouton = document.getElementById('bouton');
 var cléMémoire;
 
 bouton.addEventListener('click', function() {
+  //Reset le chiffrement
   clé.value = "";
   chrome.runtime.sendMessage("A");
 })
 
 clé.addEventListener('keyup', function() {
+  //Envoie la clé
   if (clé.value != "") {
     chrome.runtime.sendMessage(clé.value);
   }
 });
 
 texte.addEventListener('keyup', function() {
+  //Chiffre le texte avec la clé ou la mémoire
   if (texte.value != "" && clé.value != "") {
     codage(texte.value, clé.value);
   } else if (texte.value != "" && clé.value == "") {
@@ -29,9 +32,12 @@ texte.addEventListener('keyup', function() {
 chrome.runtime.onMessage.addListener(receiver);
 
 function receiver(message, sender, sendResponse) {
+  //met en mémoire la clé quand elle la reçoit
   cléMémoire = message;
 }
 
+
+//Système qui chiffre
 var motDécomposé;
 var cléDécomposée;
 var motEnChiffres = [];

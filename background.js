@@ -2,11 +2,13 @@ var clé = "A";
 chrome.runtime.onMessage.addListener(receiver);
 
 function receiver(message, sender, sendResponse) {
+  //Sauvegarde la clé, et l'envoie au content script
   clé = message;
   envoi();
 }
 
 function envoi() {
+  //Envoie la clé au content script et au popup
   chrome.runtime.sendMessage(clé);
   var params = {
     active: true,

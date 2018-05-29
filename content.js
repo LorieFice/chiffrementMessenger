@@ -7,7 +7,8 @@ var boiteMessage;
 var ongletsGauche;
 
 function changeText() {
-  conversations = document.getElementsByClassName('uiScrollableAreaContent')[0].getElementsByTagName('div')[1];
+  //Initialise l'extension
+  var conversations = document.getElementsByClassName('uiScrollableAreaContent')[0].getElementsByTagName('div')[1];
   conversations.addEventListener('click', function() {
     mémoire = [];
     compteur = 0;
