@@ -1,4 +1,7 @@
-setTimeout(changeText, 3000);
+window.addEventListener("load", function(){
+  setTimeout(changeText, 2000);
+});
+
 var phrase;
 var mémoire = [];
 var mémoireClé;
