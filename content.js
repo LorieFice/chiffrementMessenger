@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-  setTimeout(changeText, 2000);
+  setTimeout(changeText, 3000);
 });
 
 var phrase;
@@ -15,6 +15,7 @@ function changeText() {
   conversations.addEventListener('click', function() {
     mémoire = [];
     compteur = 0;
+    console.log("click");
   })
 
   chrome.runtime.onMessage.addListener(gotMessage);
