@@ -24,4 +24,4 @@ function envoi() {
   }
 }
 
-setInterval(envoi, 2000);
+setInterval(envoi, 4000);
