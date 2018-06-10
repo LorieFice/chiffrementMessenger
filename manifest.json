@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "chiffreur2mots",
-  "version": "0.2",
+  "version": "0.5",
   "content_scripts" : [
     {
       "matches": [
